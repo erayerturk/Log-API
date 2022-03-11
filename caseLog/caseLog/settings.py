@@ -135,10 +135,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "api.CustomUser"
 
-AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.ModelBackend",
-    "api.custom_auth.CustomModelBackend",
-)
+AUTHENTICATION_BACKENDS = ("api.custom_auth.CustomModelBackend",)
 
 REST_FRAMEWORK = {
     "SEARCH_PARAM": "q",
