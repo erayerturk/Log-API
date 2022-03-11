@@ -1,7 +1,4 @@
 import django_filters
-from django.db.models import Q
-import pytz
-from dateutil.parser import parse
 from rest_framework.exceptions import ValidationError
 
 from api.models import Log
