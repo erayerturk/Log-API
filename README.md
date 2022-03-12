@@ -28,7 +28,7 @@ And your app will be up on the *port 8000*
 docker exec -it daft_api_1 python manage.py test
 ```
 
-### Swagger/Redoc API Doc
+### Swagger/Redoc API Documentation
 
 - http://localhost:8000/swagger/
 - http://localhost:8000/redoc/
@@ -57,6 +57,8 @@ curl --location --request POST 'http://localhost:8000/register/' \
 
 #### Token Request (/token)
 
+"username" field accepts either username and email
+
 ```
 curl --location --request POST 'http://localhost:8000/token/' \
 --header 'Content-Type: application/json' \
@@ -66,7 +68,16 @@ curl --location --request POST 'http://localhost:8000/token/' \
 }'
 ```
 
-### Login Request (/login)
+```
+curl --location --request POST 'http://localhost:8000/token/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "admin",
+    "password": "admin1234x"
+}'
+```
+
+#### Login Request (/login)
 
 Creating dummy login data
 
@@ -75,7 +86,7 @@ curl --location --request POST 'http://localhost:8000/login/' \
 --header 'Authorization: Bearer VERY_LONG_BEARER_ACCESS_TOKEN'
 ```
 
-### Logout Request (/logout)
+#### Logout Request (/logout)
 
 Creating dummy logout data
 
