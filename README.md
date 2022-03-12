@@ -25,7 +25,7 @@ And your app will be up on the *port 8000*
 ### Test
 
 ```
-docker exec -it daft_api_1 python manage.py test
+docker exec -it log-api_api_1 python manage.py test
 ```
 
 ### Swagger/Redoc API Documentation
@@ -39,7 +39,7 @@ docker exec -it daft_api_1 python manage.py test
 You can create a super user to access admin Dashboard
 
 ```
-docker exec -it daft_api_1 python manage.py createsuperuser
+docker exec -it log-api_api_1 python manage.py createsuperuser
 ```
 
 http://localhost:8000/admin
