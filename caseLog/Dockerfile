@@ -18,4 +18,5 @@ COPY . .
 
 RUN python manage.py collectstatic --noinput
 
+
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
