@@ -21,9 +21,9 @@ class CustomUserManager(BaseUserManager):
         company = Company.objects.get_or_create(name="superuser_company")
         extra_fields.setdefault("company", company[0])
 
-        if extra_fields.get("is_staff") is not True:
+        if not extra_fields.get("is_staff"):
             raise ValueError("Superuser must have is_staff=True.")
-        if extra_fields.get("is_superuser") is not True:
+        if not extra_fields.get("is_superuser"):
             raise ValueError("Superuser must have is_superuser=True.")
         return self.create_user(email, password, **extra_fields)
 
